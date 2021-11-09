@@ -7,12 +7,22 @@ public class ExampleBehaviourScript : MonoBehaviour
 {
     Rigidbody rb;
 
+    public Light myLight;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
     void Update()
     {
+
+
+        // Turn on the light
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            myLight.enabled = !myLight.enabled;
+        }
 
         // Change the color of the gameobject
 
@@ -75,13 +85,24 @@ public class ExampleBehaviourScript : MonoBehaviour
         Destroy(gameObject);
     }
 
+   
+    
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.tag == "Collectible")
         {
-            //Destroy(gameObject);
+            // Let´s collect things
             Destroy(collision.gameObject);
         }
+
+        // Let´s get destroyed by enemy
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+
+
     }
+   
 
 }
