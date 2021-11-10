@@ -21,8 +21,23 @@ public class ExampleBehaviourScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            myLight.enabled = !myLight.enabled;
+
+            myLight.enabled = true;
         }
+
+        if (Input.GetKeyUp(KeyCode.L))
+        {
+            myLight.enabled = false;
+        }
+
+
+        // Switch the light on and off
+
+       // if (Input.GetKeyDown(KeyCode.L))
+       // {
+
+            //myLight.enabled = !myLight.enabled;
+        //}
 
         // Change the color of the gameobject
 
