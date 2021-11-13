@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
 
     Rigidbody rb;
-
+    public Light myLight;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,30 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Turn on the light
+
+        /*if (Input.GetKeyDown(KeyCode.L))
+        {
+
+            myLight.enabled = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.L))
+        {
+            myLight.enabled = false;
+        }
+        */
+
+        //Switch the light on and off
+
+         if (Input.GetKeyDown(KeyCode.L))
+         {
+            myLight.enabled = !myLight.enabled;
+         }
+
+
+
+
 
         // Change the color of the gameobject
 
