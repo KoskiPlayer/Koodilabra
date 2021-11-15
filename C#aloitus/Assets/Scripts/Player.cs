@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
 
         //Switch the light on and off
 
+
          if (Input.GetKeyDown(KeyCode.L))
          {
             myLight.enabled = !myLight.enabled;
