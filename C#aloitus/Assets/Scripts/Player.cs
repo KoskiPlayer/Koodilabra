@@ -12,6 +12,11 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        //print ("terve vaan");
+
+        Testifunktio();
+
         rb = GetComponent<Rigidbody>();
     }
 
@@ -112,16 +117,14 @@ public class Player : MonoBehaviour
 
             SceneManager.LoadScene("GameOver");                       
         }
-
-
-
-
-
-
+            
     }
 
 
-
+    void Testifunktio()
+    {
+        print("Testifunktio kutsuttu!");
+    }
 
 
 }
