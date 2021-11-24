@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MoreConditions : MonoBehaviour
 {
-    public string name;
+    public string nimi;
 
     // Start is called before the first frame update
     void Start()
     {
-        if ( name == "Markku")
+        if ( nimi == "Markku")
         {
             print(" Terve Markku ");
         }
