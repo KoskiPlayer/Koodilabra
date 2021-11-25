@@ -25,7 +25,13 @@ public class FindTest : MonoBehaviour
         //    			Destroy (enemy);       
         //}
 
-        GameObject.Find("Cube (1)").SetActive(false);
+        //GameObject.Find("Cube (1)").SetActive(false);
+
+        GameObject.Find("Cube (1)").GetComponent<PlayerHealth>().lives = 7;
+
+        // GameObject.Find("Cube (1)").GetComponent<Rigidbody>().useGravity = true;
+
+
     }
     // Update is called once per frame
     void Update()
