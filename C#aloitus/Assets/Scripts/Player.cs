@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     Rigidbody rb;
     public Light myLight;
 
+    public float rotatespeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -101,6 +103,11 @@ public class Player : MonoBehaviour
         {
             rb.velocity = Vector3.left * 10f;
         }
+
+        //rotate gameobject
+
+        transform.Rotate(0, rotatespeed, 0);
+
     }
     private void OnCollisionEnter(Collision collision)
     {
