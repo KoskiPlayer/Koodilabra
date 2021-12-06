@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLight: {fileID: 842236446}
+  rotatespeed: 0
 --- !u!4 &181802575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3470365253540389231, guid: 7b217ed165f4c0741beadd9793961053, type: 3}
@@ -835,6 +836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLight: {fileID: 842236446}
+  rotatespeed: 1
 --- !u!54 &1123140550
 Rigidbody:
   m_ObjectHideFlags: 0
