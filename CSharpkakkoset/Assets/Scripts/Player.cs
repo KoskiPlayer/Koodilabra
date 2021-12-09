@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -15,26 +16,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            GetComponent<Renderer>().material.color = Color.green;
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            GetComponent<Renderer>().material.color = Color.red;
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            GetComponent<Renderer>().material.color = Color.blue;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            GetComponent<Renderer>().material.color = Color.yellow;
-        }
-
         // Move the gameobject
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -58,7 +39,28 @@ public class Player : MonoBehaviour
             rb.velocity = Vector3.up * 10f;
         }
 
+        // Change the color of the gameobject
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            GetComponent<Renderer>().material.color = Color.green;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GetComponent<Renderer>().material.color = Color.red;
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            GetComponent<Renderer>().material.color = Color.blue;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            GetComponent<Renderer>().material.color = Color.yellow;
+        }      
     } // update loppuu t‰h‰n
+
 
     // ker‰ill‰‰n karkkeja
     private void OnCollisionEnter(Collision collision)
@@ -68,7 +70,19 @@ public class Player : MonoBehaviour
             // Let¥s collect things
             Destroy(collision.gameObject);
         }
+
+        // Let¥s get destroyed by enemy
+        if (collision.gameObject.tag == "Enemy")
+        {
+            //Destroy(gameObject);
+
+            // Let¥s load the GameOver -scene
+
+            SceneManager.LoadScene("GameOver");
+            
+        }
+
     }
 
 
-}
+} //Player p‰‰ttyy t‰h‰n
