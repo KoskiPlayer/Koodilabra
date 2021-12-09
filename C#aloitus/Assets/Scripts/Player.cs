@@ -85,7 +85,11 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.U))
         {
-            rb.AddForce(Vector3.up * 500f);
+            rb.velocity = Vector3.up * 10;
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            rb.velocity = Vector3.down * 10;
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
