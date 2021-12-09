@@ -5,6 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
+    public static GameControl instance;
+
+    int score = 0;
+    int lives = 3;
+
+    bool gameOver = false;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+
    public void Level1()
     {
         SceneManager.LoadScene("Level1");
@@ -18,6 +31,32 @@ public class GameControl : MonoBehaviour
     public void MainScene()
     {
         SceneManager.LoadScene("MainScene");
+    }
+
+    public void IncrementScore()
+    {
+        score++;
+        //print(score);
+    }
+
+    public void DecreaseLife()
+    {
+        if(lives > 0)
+        {
+            lives--;
+            print(lives);
+        }
+        if(lives <= 0)
+        {
+            gameOver = true;
+
+            GameOver();
+        }       
+        
+    }
+    public void GameOver()
+    {
+        print("GameOver()");
     }
 
 }

@@ -117,6 +117,9 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Collectible")
         {
+            // Increment score
+            GameControl.instance.IncrementScore();
+            
             // Let´s collect things
             Destroy(collision.gameObject);
         }
@@ -124,9 +127,14 @@ public class Player : MonoBehaviour
         // Let´s get destroyed by enemy
         if (collision.gameObject.tag == "Enemy")
         {
-           // Destroy(gameObject);
+            // Destroy(gameObject);
+            
+            //SceneManager.LoadScene("GameOver");  
 
-            SceneManager.LoadScene("GameOver");                       
+            // Decrease Lives
+            GameControl.instance.DecreaseLife();
+            Destroy(collision.gameObject);
+
         }
             
     }
