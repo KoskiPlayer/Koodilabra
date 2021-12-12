@@ -133,6 +133,7 @@ public class Player : MonoBehaviour
 
             // Decrease Lives
             GameControl.instance.DecreaseLife();
+            // Destroy the enemy
             Destroy(collision.gameObject);
 
         }
@@ -142,7 +143,7 @@ public class Player : MonoBehaviour
 
     void Testifunktio()
     {
-        print("Testifunktio kutsuttu!");
+       // print("Testifunktio kutsuttu!");
     }
 
 
