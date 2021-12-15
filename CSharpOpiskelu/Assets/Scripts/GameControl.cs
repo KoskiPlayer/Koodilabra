@@ -5,6 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
+    public static GameControl instance;
+
+    int score = 0;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+
+
     public void Level1()
     {
         SceneManager.LoadScene("Level1");
@@ -17,6 +28,13 @@ public class GameControl : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
+
+    public void IncrementScore()
+    {
+        score++;
+        print(score);
+    }
+
 
 
 
